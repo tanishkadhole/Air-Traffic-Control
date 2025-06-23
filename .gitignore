@@ -8,3 +8,4 @@ __pycache__/
 .vscode/
 atc_env/
 .DS_Store
+.env

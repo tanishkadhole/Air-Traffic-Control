@@ -1,11 +1,13 @@
 import requests
 from datetime import datetime, timedelta
 from neo4j import GraphDatabase
+from dotenv import load_dotenv
+import os
 
-# === CONFIG ===
-NEO4J_URI = "neo4j+s://52a172a5.databases.neo4j.io"
-NEO4J_USER = "neo4j"
-NEO4J_PASSWORD = "8TniOw1l6awCzLI9NG93rIqjFv9ov3w4fXRDP6zzoYg" 
+load_dotenv()
+NEO4J_URI = os.getenv("NEO4J_URI")
+NEO4J_USER = os.getenv("NEO4J_USER")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 
 # === AIRCRAFT TELEMETRY from Opensky Network===
 def get_opensky_telemetry(limit=5): # connects to Opensky Rest API and gets aircraft telemetry
